@@ -1,0 +1,128 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.allocate_moneyModel
+@{
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocate Money to Disaster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #e0880b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: white;
+                color: #e0880b;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">Logout</a>
+        <a href="admin_main">Admin Page</a>
+    </header>
+
+    <div class="container">
+        <h1>Allocate Money to Active Disaster</h1>
+        <form method="post">
+            <label for="disaster">Select Disaster:</label>
+            <select id="disaster" name="disaster" required>
+                @foreach (var disaster in Model.listdisasters)
+                {
+                    <option value="@disaster.Id">@disaster.description, @disaster.location</option>
+                }
+            </select>
+
+            <label for="amount">Amount to Allocate:</label>
+            <select id="amount" name="amount" required>
+                @foreach (var money in Model.listmonetaryDonations)
+                {
+                    <option value="@money.Amount">@money.Amount</option>
+                }
+            </select>
+
+            <button type="submit" class="btn">Allocate Money</button>
+        </form>
+
+    </div>
+
+    <script>
+        function allocateMoney() {
+            const disaster = document.getElementById("disaster").value;
+            const amount = document.getElementById("amount").value;
+            alert(`Allocated R${amount} to ${disaster}`);
+        }
+    </script>
+</body>
+</html>
+
+

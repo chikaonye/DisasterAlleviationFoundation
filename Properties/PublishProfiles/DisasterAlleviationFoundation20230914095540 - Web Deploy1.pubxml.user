@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALTRU8Or4702QrYBi2JzPngAAAAACAAAAAAAQZgAAAAEAACAAAAB8iBQzoHgHJsoPW+nYi6SC7T62W933LY1Po89H/RaSiAAAAAAOgAAAAAIAACAAAAC+Umss4ALZavs4y5gd1ruH2SS0NnxAXw0yOmOfA3zTeYAAAADhgkJfmgq9J4RX4kclYYKkxfyzv8AMS9iqByn/UuSPmZEMDtL7M/JPEB/+jdw0caw9twSG5tnWncXI5p08bzcm8bkV43wAz/5F4RFa/lalTVempFUfBqyuOz1wCImc0K5DbPPrLryEvB8YB5MIBolN0TJlEh2By7SjCsbCR84wf0AAAACoAQg8uNr0WH3AxmBof276rGefyVjP6LPiRyaDBHOGqOXluIDGZ/eMMW2RzNCJT7kO7vo9lzGOeM46rh2HrsSW</EncryptedPassword>
+    <History>True|2023-11-24T06:25:25.5913936Z;True|2023-11-24T02:01:27.5837737+00:00;True|2023-10-27T11:59:47.6443581+00:00;True|2023-10-27T11:54:39.8132354+00:00;True|2023-09-22T13:20:29.5759318+00:00;True|2023-09-22T12:20:38.1588896+00:00;True|2023-09-22T01:42:22.4436967+00:00;True|2023-09-22T00:35:00.9964811+00:00;True|2023-09-21T13:13:52.3735936+00:00;True|2023-09-21T11:50:31.6479527+00:00;True|2023-09-21T11:46:33.8020726+00:00;True|2023-09-21T10:53:35.9426649+00:00;True|2023-09-21T10:44:02.2153964+00:00;True|2023-09-21T10:13:32.4409884+00:00;True|2023-09-21T08:56:00.2652361+00:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:djpromo7.database.windows.net,1433%3bInitial Catalog=DJPromoWebsite%3bUser Id=admin1%40djpromo7%3bPassword=Waitdeep31</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="DisasterAlleviationFoundation.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:djpromo7.database.windows.net,1433%3bInitial Catalog=DJPromoWebsite%3bUser Id=admin1%40djpromo7%3bPassword=Waitdeep31</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

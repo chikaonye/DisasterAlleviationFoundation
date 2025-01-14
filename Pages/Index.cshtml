@@ -1,0 +1,128 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alleviation Foundation</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #2e0269;
+            margin: 20% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 60%;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: 35px;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #e0880b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+            .btn:hover {
+                background-color: white;
+                color: #e0880b;
+            }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Disaster Alleviation Foundation</h1>
+        <p>We provide practical aid during disasters.</p>
+        <img src="~/disaster2.jpg" alt="image">
+        </br>
+        </br>
+        <section id="about-us" style="background-color: white; color: black; border-radius: 10px; padding: 20px;">
+            <h2>About Us</h2>
+            <p>The Disaster Alleviation Foundation is a nonprofit organization dedicated to providing critical aid and support during times of disasters. Our mission is to offer practical assistance to communities in need when they are most vulnerable. We operate on the principles of compassion, transparency, and efficiency, striving to make a meaningful impact on the lives of those affected by disasters worldwide.</p>
+        </section>
+        </br>
+        </br>
+        <img src="~/smiling_kids.jpg" alt="image of kids">
+        </br>
+        </br>
+        <section id="our-mission" style="background-color: #2e0269; border-radius: 10px; padding: 20px; border: 2px solid #e0880b;">
+            <h2>Our Mission</h2>
+            <p>At the heart of our mission is the belief that every individual, family, and community deserves the opportunity to recover and rebuild after facing adversity. Whether it's responding to natural disasters, humanitarian crises, or other emergencies, our organization is committed to delivering vital resources such as monetary donations and essential goods. We work collaboratively with donors, partners, and volunteers to ensure that help reaches those who need it most, and we prioritize transparency in all our actions, aiming to provide donors and supporters with clear insights into how their contributions make a difference in disaster-stricken regions. Our unwavering dedication to disaster relief drives us to be a beacon of hope and assistance in challenging times.</p>
+        </section>
+
+    </div>
+</body>
+</html>
+

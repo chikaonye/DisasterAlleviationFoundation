@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALTRU8Or4702QrYBi2JzPngAAAAACAAAAAAAQZgAAAAEAACAAAAB2kJuaSek66rnxYTer4/FugnR+iFtXw4op9g7CAD7u4wAAAAAOgAAAAAIAACAAAAARWVRFAMikMyA1+mv40ok/DQG4Ocf20j8B+4XQresYD4AAAAAayI05/aVntf4dVvoJd6f7ahs6Akh+P1+0VZ6fkC19qoN3mfaZdrtL5J+4skbIcsB3ZB3/FzppSc39K7YR6koG/x5ZB54yVtoNF7PhkfVmJe/cusWHSe9aOLMV+gkwDmsvqBHQXFLKxDuH8V/ZuOeXLx4kO5b9HgDbFzJATVJwXUAAAADL6Cbr8DYQ13VMV0AE51FT4mGrlLQ9UMVLuy4UMER+tCSU/0aPPccacvwKRW6nBRnw3M+E3G5OYMx2DnFoqGsA</EncryptedPassword>
+    <History>False|2023-09-21T08:50:05.9139648Z;False|2023-09-21T08:41:31.2247743+00:00;False|2023-09-21T08:35:37.9766745+00:00;False|2023-09-21T08:32:55.7541637+00:00;True|2023-09-14T12:54:55.9971754+00:00;True|2023-09-14T12:35:31.1453893+00:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:djpromo7.database.windows.net,1433%3bInitial Catalog=DJPromoWebsite%3bUser Id=admin1%40djpromo7%3bPassword=Waitdeep-</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

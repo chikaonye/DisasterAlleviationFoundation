@@ -1,0 +1,113 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.admin_mainModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: 35px;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                    color: #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .dashboard-section {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+            .dashboard-section h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+        .dashboard-stat {
+            background-color: #e0880b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .dashboard-action {
+            background-color: #2e0269;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+            .dashboard-action:hover {
+                background-color: white;
+                color: #2e0269;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">Logout</a>
+        <a href="admin_main">Admin Page</a>
+    </header>
+
+    <div class="container">
+
+        <div class="dashboard-section">
+            <h2>Manage Data</h2>
+            <a href="monetary_dono" class="dashboard-action">Capture Monetary Donations</a>
+            <a href="goods_dono" class="dashboard-action">Capture Goods Donations</a>
+            <a href="view_lists" class="dashboard-action">View Lists</a>
+            <a href="category_management" class="dashboard-action">View Categories</a>
+            <a href="capture_disaster" class="dashboard-action">Capture Disasters</a>
+            <a href="allocate_money" class="dashboard-action">Allocate Money to Active Disaster</a>
+            <a href="allocate_goods" class="dashboard-action">Allocate Goods to Active Disaster</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

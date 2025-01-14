@@ -1,0 +1,167 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.disaster_listModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: 35px;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                    color: #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e0880b;
+        }
+
+        .btn {
+            background-color: #e0880b;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+            .btn:hover {
+                background-color: white;
+                color: #e0880b;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">Logout</a>
+        <a href="admin_main">Admin Page</a>
+    </header>
+    <div class="container">
+            <h1>Incoming Monetary Donations</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach (var monetaryDonations in Model.listmonetaryDonations)
+                {
+                        <tr>
+                    <td>@monetaryDonations.Id</td>
+                    <td>@monetaryDonations.DonationDate2</td>
+                    <td>@monetaryDonations.Amount</td>
+                        </tr>
+                }
+                </tbody>
+            </table>
+
+            <h1>Incoming Goods Donations</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Items</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var goodsDonations in Model.listgoodsDonations)
+                {
+                    <tr>
+                        <td>@goodsDonations.Id</td>
+                        <td>@goodsDonations.DonationDate</td>
+                        <td>@goodsDonations.Category</td>
+                        <td>@goodsDonations.NumberOfItems</td>
+                        <td>@goodsDonations.Description</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+        <h1>Disasters List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Required Aid Types</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var disasters in Model.listdisasters)
+                {
+                    <tr>
+                        <td>@disasters.Id</td>
+                        <td>@disasters.startDate</td>
+                        <td>@disasters.endDate</td>
+                        <td>@disasters.location</td>
+                        <td>@disasters.description</td>
+                        <td>@disasters.requiredAidTypes</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

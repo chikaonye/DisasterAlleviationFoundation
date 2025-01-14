@@ -1,0 +1,143 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.capture_disasterModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: 35px;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                    color: #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type="date"],
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #e0880b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+            .btn:hover {
+                background-color: white;
+                color: #e0880b;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">Logout</a>
+        <a href="admin_main">Admin Page</a>
+    </header>
+    <div class="container">
+        <h1>Disaster Capture</h1>
+        <form id="newDisaster" method="post">
+            @if (Model.errorMsg.Length > 0)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <strong>@Model.errorMsg</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            }
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" value="@Model.disasters.startDate" required>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" value="@Model.disasters.endDate" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="@Model.disasters.location" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4" name="description" value="@Model.disasters.description" required></textarea>
+
+            <label for="requiredAidTypes">Required Aid Types:</label>
+            <input type="text" id="requiredAidTypes" name="requiredAidTypes" value="@Model.disasters.requiredAidTypes" required>
+
+            @if (Model.successMsg.Length > 0)
+            {
+                        <div class="alert alert-success" role="alert">
+                            <strong>@Model.successMsg</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+            }
+
+            <button type="submit" class="btn">Capture Disaster</button>
+        </form>
+    </div>
+</body>
+</html>
+

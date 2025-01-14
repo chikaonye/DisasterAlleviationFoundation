@@ -1,0 +1,142 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.goods_donoModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2e0269;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2e0269;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            header a {
+                text-decoration: none;
+                color: white;
+                margin: 0 15px;
+                font-weight: bold;
+                font-family: Arial;
+                font-size: 35px;
+            }
+
+                header a:hover {
+                    border-bottom: 2px solid #e0880b;
+                    color: #e0880b;
+                }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #e0880b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+            .btn:hover {
+                background-color: white;
+                color: #e0880b;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index">Logout</a>
+        <a href="admin_main">Admin Page</a>
+    </header>
+
+    <div class="container">
+        <h1>Goods Donation</h1>
+
+        @if (Model.errorMsg.Length>0)
+        {
+            <div class="alert alert-danger" role="alert">
+                <strong>@Model.errorMsg</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        }
+
+        <form id="donationForm" method="post">
+            <label for="donationDate">Donation Date:</label>
+            <input type="date" id="DonationDate" name="DonationDate" value="@Model.goodsDonations.DonationDate" required>
+
+            <label for="category">Category:</label>
+            <select id="Category" name="Category" value="@Model.goodsDonations.Category" required>
+                <option value="clothes">Clothes</option>
+                <option value="foods">Non-perishable Foods</option>
+            </select>
+
+            <label for="itemCount">Number of Items:</label>
+            <input type="number" id="NumberOfItems" name="NumberOfItems" value="@Model.goodsDonations.NumberOfItems" min="1" required>
+
+            <label for="itemDescription">Item Description:</label>
+            <textarea id="Description" name="Description" value="@Model.goodsDonations.Description" rows="4" required></textarea>
+
+            <label for="anonymous">Remain Anonymous:</label>
+            <input type="checkbox" id="anonymous" name="IsAnonymous">
+
+            @if (Model.successMsg.Length > 0)
+            {
+                <div class="alert alert-success" role="alert">
+                    <strong>@Model.successMsg</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <button type="submit" class="btn" name="submit" >Submit Donation</button>
+        </form>
+    </div>
+</body>
+</html>
